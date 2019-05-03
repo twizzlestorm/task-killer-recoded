@@ -17,7 +17,7 @@ int main()
 	string input;
 	string command;
 	char yn = 'Y';
-	int worked;
+	int failed;
 
 	while (yn == 'Y' || yn == 'y')
 	{
@@ -32,17 +32,17 @@ int main()
 
 		command = "taskkill /f /im " + input;
 
-		worked = system(command.c_str());
-		
-		if (worked == 0)
-		cout << "The programs specified have been killed successfully.";
-		else
-		cout << "There was an error while killing the program - check spelling and try again.";
+		failed = system(command.c_str());
+
+		if (failed)		
+			cout << "There was an error, it's likely you've typed the program wrong.";
+		else		
+			cout << "The programs specified have been killed."; 
 
 		cout << "\nWould you like to run the program again? (Y/N): ";
 		cin >> yn;
 
 	}
-	return 0;
+	return 0;			
 
 }
