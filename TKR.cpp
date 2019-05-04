@@ -6,9 +6,34 @@ using namespace std;
 
 int cMenu()
 {
+	string command;
+	string color;
+	int failed;
 
-	// TODO
-	return 0;
+	while (command != "return")
+	{
+		system("cls");
+		cout << "Welcome to the color menu!\n";
+		cout << "For information on correct syntax, please visit the TKR wiki here:\n";
+		cout << "https://github.com/twizzlestorm/task-killer-recoded/wiki/Color-syntax\n\n";
+
+		cout << "Enter two hex digits, or type \"return\" to return to options: ";
+		cin >> color;
+
+		if (color == "return")
+			return 0;
+
+		command = "color " + color;
+
+		failed = system(command.c_str());
+
+		if (failed)
+			cout << "\nThere was an error; check syntax and try again.";
+		else
+			cout << "\nColors changed successfully.";
+	}
+
+		return 0;
 
 }
 
@@ -34,14 +59,15 @@ int hMenu()
 		}
 
 		if (choice == 1)
+		{
 			system("tasklist");
+			cout << "Press any key to go back to the options menu.";
+			system("pause >nul");
+		}
 
 		if (choice == 2)
 			cMenu();
-
 	}
-	
-	
 
 	return 0;
 }
@@ -68,7 +94,6 @@ int main()
 			hMenu();
 			main();
 		}
-
 
 		command = "taskkill /f /im " + input;
 
