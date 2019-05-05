@@ -65,7 +65,7 @@ int hMenu()
 			system("pause >nul");
 		}
 
-		if (choice == 2)
+		else if (choice == 2)
 			cMenu();
 	}
 
