@@ -104,7 +104,7 @@ int main()
 		else
 			cout << "The task has been killed successfully.";
 
-		cout << "\nWould you like to run the program again? (Y/N): ";
+		cout << "\nWould you like to kill another task? (Y/N): ";
 		cin >> yn;
 
 	}
