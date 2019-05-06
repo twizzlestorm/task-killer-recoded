@@ -4,7 +4,7 @@
 #include <string>
 using namespace std;
 
-int cMenu()
+void cMenu()
 {
 	string command;
 	string color;
@@ -21,7 +21,7 @@ int cMenu()
 		cin >> color;
 
 		if (color == "return")
-			return 0;
+			return;
 
 		command = "color " + color;
 
@@ -33,11 +33,11 @@ int cMenu()
 			cout << "\nColors changed successfully.";
 	}
 
-		return 0;
+		return;
 
 }
 
-int hMenu()
+void hMenu()
 {
 	int choice = 0;
 
@@ -69,7 +69,7 @@ int hMenu()
 			cMenu();
 	}
 
-	return 0;
+	return;
 }
 
 int main()
