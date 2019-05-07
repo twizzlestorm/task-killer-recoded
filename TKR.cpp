@@ -6,11 +6,10 @@ using namespace std;
 
 void cMenu()
 {
-	string command;
 	string color;
 	int failed;
 
-	while (command != "return")
+	while (color != "return")
 	{
 		system("cls");
 		cout << "Welcome to the color menu!\n";
@@ -23,9 +22,9 @@ void cMenu()
 		if (color == "return")
 			return;
 
-		command = "color " + color;
+		color = "color " + color;
 
-		failed = system(command.c_str());
+		failed = system(color.c_str());
 
 		if (failed)
 			cout << "\nThere was an error; check syntax and try again.";
@@ -33,7 +32,7 @@ void cMenu()
 			cout << "\nColors changed successfully.";
 	}
 
-		return;
+	return;
 
 }
 
@@ -75,7 +74,6 @@ void hMenu()
 int main()
 {
 	string input;
-	string command;
 	char yn = 'Y';
 	int failed;
 
@@ -95,9 +93,9 @@ int main()
 			main();
 		}
 
-		command = "taskkill /f /im " + input;
+		input = "taskkill /f /im " + input;
 
-		failed = system(command.c_str());
+		failed = system(input.c_str());
 
 		if (failed)
 			cout << "There was an error while killing the task; check your spelling and try again.";
