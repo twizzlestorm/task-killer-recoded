@@ -31,9 +31,6 @@ void cMenu()
 		else
 			cout << "\nColors changed successfully.";
 	}
-
-	return;
-
 }
 
 void hMenu()
@@ -67,8 +64,6 @@ void hMenu()
 		else if (choice == 2)
 			cMenu();
 	}
-
-	return;
 }
 
 int main()
