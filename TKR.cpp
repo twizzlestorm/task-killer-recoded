@@ -39,7 +39,6 @@ void hMenu()
 
 	while (choice != 3)
 	{
-
 		system("cls");
 		cout << "Help options:\n\n";
 		cout << "1) Provide a list of tasks to kill\n";
@@ -102,5 +101,4 @@ int main()
 
 	}
 	return 0;
-
 }
