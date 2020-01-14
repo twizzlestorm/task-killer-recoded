@@ -37,32 +37,34 @@ void hMenu()
 {
 	int choice = 0;
 
-	while (choice != 3)
+	system("cls");
+	cout << "Help options:\n\n";
+	cout << "1) Provide a list of tasks to kill\n";
+	cout << "2) Change the colors of the screen\n";
+	cout << "3) Return to the home screen\n\n";
+  	cout << "Please enter your choice: ";
+	cin >> choice;
+
+	while (choice < 1 || choice > 3)
 	{
-		system("cls");
-		cout << "Help options:\n\n";
-		cout << "1) Provide a list of tasks to kill\n";
-		cout << "2) Change the colors of the screen\n";
-		cout << "3) Return to the home screen\n\n";
-		cout << "Please enter your choice: ";
+		cout << "\nYour choice was invalid. Please choose a valid number: ";
 		cin >> choice;
-
-		while (choice < 1 || choice > 3)
-		{
-			cout << "\nYour choice was invalid. Please choose a valid number: ";
-			cin >> choice;
-		}
-
-		if (choice == 1)
-		{
-			system("tasklist");
-			cout << "Press any key to go back to the options menu.";
-			system("pause >nul");
-		}
-
-		else if (choice == 2)
-			cMenu();
 	}
+		
+	if (choice == 1)
+	{
+		system("tasklist");
+		cout << "Press any key to go back to the options menu.";
+		system("pause >nul");
+	}
+
+	else if (choice == 2)
+	  cMenu();
+			
+	else 
+	  return;
+		    
+	hMenu();
 }
 
 int main()
