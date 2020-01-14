@@ -9,28 +9,26 @@ void cMenu()
 	string color;
 	int failed;
 
-	while (color != "return")
-	{
-		system("cls");
-		cout << "Welcome to the color menu!\n";
-		cout << "For information on correct syntax, please visit the TKR wiki here:\n";
-		cout << "https://github.com/twizzlestorm/task-killer-recoded/wiki/Color-syntax\n\n";
-
-		cout << "Enter two hex digits, or type \"return\" to return to options: ";
-		cin >> color;
-
-		if (color == "return")
-			return;
-
-		color = "color " + color;
-
-		failed = system(color.c_str());
-
-		if (failed)
-			cout << "\nThere was an error; check syntax and try again.";
-		else
-			cout << "\nColors changed successfully.";
-	}
+	system("cls");
+	cout << "Welcome to the color menu!\n";
+	cout << "For information on correct syntax, please visit the TKR wiki here:\n";
+	cout << "https://github.com/twizzlestorm/task-killer-recoded/wiki/Color-syntax\n\n";
+	
+	cout << "Enter two hex digits, or type \"return\" to return to options: ";
+	cin >> color;
+	
+	if (color == "return")
+		return;
+	
+	color = "color " + color;
+	
+	failed = system(color.c_str());
+	
+	if (failed)
+		cout << "\nThere was an error; check syntax and try again.";
+	else
+		cout << "\nColors changed successfully.";
+	cMenu();
 }
 
 void hMenu()
